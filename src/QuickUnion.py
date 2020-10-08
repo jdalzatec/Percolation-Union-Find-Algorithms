@@ -4,7 +4,7 @@ class QuickUnion:
         self.parent = [i for i in range(N)]
 
     def root(self, i):
-        while (i != self.parent[i]):
+        while i != self.parent[i]:
             i = self.parent[i]
         return i
 

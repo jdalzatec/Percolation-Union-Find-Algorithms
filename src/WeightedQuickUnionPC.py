@@ -18,13 +18,13 @@ class WeightedQuickUnionPC:
     def union(self, p, q):
         i = self.root(p)
         j = self.root(q)
-        
-        if (i == j):
+
+        if i == j:
             return
 
-        if (self.rank[i] < self.rank[j]):
+        if self.rank[i] < self.rank[j]:
             self.parent[i] = j
-        elif (self.rank[i] > self.rank[j]):
+        elif self.rank[i] > self.rank[j]:
             self.parent[j] = i
         else:
             self.parent[i] = j

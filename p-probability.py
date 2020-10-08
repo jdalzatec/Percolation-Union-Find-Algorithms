@@ -10,7 +10,7 @@ def main():
 
     pyplot.figure()
     for L in [10, 20]:
-    
+
         real_p_mean = []
         real_p_std = []
 
@@ -27,7 +27,7 @@ def main():
                     i, j = possible[0]
                     possible.remove(possible[0])
                     lattice.open(i, j)
-                
+
                 values.append(lattice.percolates())
                 fractions.append(lattice.numberOfOpenSites() / (L * L))
 
@@ -37,7 +37,9 @@ def main():
             real_p_mean.append(numpy.mean(fractions))
             real_p_std.append(numpy.std(fractions))
 
-        pyplot.plot(real_p_mean, percolation_probability_mean, "-", lw=2, label=r"$L = %i$" % L)
+        pyplot.plot(
+            real_p_mean, percolation_probability_mean, "-", lw=2, label=r"$L = %i$" % L
+        )
         # pyplot.errorbar(real_p_mean, percolation_probability_mean, yerr=percolation_probability_std, fmt="none", ecolor="black")
 
     pyplot.grid()
@@ -51,5 +53,6 @@ def main():
     pyplot.savefig("percolation_probability.pdf")
     pyplot.close()
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()

@@ -5,6 +5,7 @@ from matplotlib import pyplot
 from tqdm import tqdm
 import numpy
 
+
 def main():
     L = 100
     p = 0.5
@@ -13,11 +14,10 @@ def main():
 
     # sites = list(product(range(L), repeat=2))
     # numpy.random.shuffle(sites)
-    
+
     # for site in sites[:int(p * L * L)]:
     #     lattice.open(*site)
     # plot_lattice(lattice)
-
 
     # other interesting result is to plot
     # the amount of clusters vs p
@@ -28,8 +28,8 @@ def main():
 
         sites = list(product(range(L), repeat=2))
         numpy.random.shuffle(sites)
-        
-        for site in sites[:int(p * L * L)]:
+
+        for site in sites[: int(p * L * L)]:
             lattice.open(*site)
 
         _, amount = lattice.clusters()
@@ -46,8 +46,5 @@ def main():
     pyplot.close()
 
 
-
-
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

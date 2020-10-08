@@ -10,14 +10,11 @@ class Lattice:
 
         self.uf = WeightedQuickUnion(L * L)
 
-
     def getIndex(self, i, j):
         return j * self.L + i
 
-
     def isOpen(self, i, j):
         return self.sites[i, j]
-
 
     def open(self, i, j):
         if not self.sites[i, j]:
@@ -43,10 +40,8 @@ class Lattice:
             if (i < (self.L - 1)) and self.isOpen(i + 1, j):
                 self.uf.union(index, self.getIndex(i + 1, j))
 
-
     def numberOfOpenSites(self):
         return self.opened
-
 
     def clusters(self):
         roots = numpy.zeros((self.L, self.L), dtype=int)

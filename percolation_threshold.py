@@ -2,6 +2,7 @@ from src.Percolation import Percolation
 from src.Plot import plot_lattice_percolation
 import numpy
 
+
 def main():
     L = 100
     trials = 100
@@ -20,5 +21,6 @@ def main():
     print(f"pc std = {numpy.std(values)}")
     plot_lattice_percolation(lattice)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()
